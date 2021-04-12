@@ -15,13 +15,13 @@ public class Base {
 	public static WebDriver getDriver() throws IOException
 	{
 		prop=new Properties();
-		FileInputStream fis=new FileInputStream("C:\\Users\\Owner\\Documents\\Automation\\src\\test\\java\\Cucumber\\Automation\\global.properties");
+		FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\java\\Cucumber\\Automation\\global.properties");
 		
 	prop.load(fis);
 
 	
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\rahul\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\src\\test\\java\\Server\\chromedriver.exe");
    	 driver=new ChromeDriver();
    	 
   	driver.get(prop.getProperty("url"));
